@@ -10,7 +10,7 @@ namespace ElectroStore.Models
         public string Mark { get; set; }
 
         //Cross section of wire
-        public WireCrossSection CrossSection { get; set; }
+        public string CrossSection { get; set; }
 
         //Producer of wire
         public string Producer { get; set; }
