@@ -23,5 +23,23 @@ namespace ElectroStore.Controllers
             //return View
             return View();
         }
+
+        [HttpGet]
+        public ActionResult Buy(int id)
+        {
+            ViewBag.GoodId = id;
+            return View();
+        }
+
+        [HttpPost]
+        public string Buy(Purchase purchase)
+        {
+            purchase.DatePurchase = DateTime.Now;
+            //add info about purchase to DB
+            db.Purchases.Add(purchase);
+            //save all changes
+            db.SaveChanges();
+            return "Спасибо, " + purchase.Person + ", за покупку!";
+        }
     }
 }

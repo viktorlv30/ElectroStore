@@ -1,35 +1,26 @@
 ﻿@{
-    Layout = null;
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<!DOCTYPE html>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width"/>
-    <title>Электро магазин</title>
-</head>
-<body>
-<div>
-    <h3>Распродажа кабелей</h3>
-    <table>
-        <tr>
-            <td><p>Марка кабеля</p></td>
-            <td><p>Поперечное сечение</p></td>
-            <td><p>Производитель</p></td>
-            <td><p>Цена</p></td>
-        </tr>
-        @foreach (var b in ViewBag.Cabels)
-        {
-            <tr>
-                <td><p>@b.Mark</p></td>
-                <td><p>@b.CrossSection.ToString()</p></td>
-                <td><p>@b.Producer</p></td>
-                <td><p>@b.Price</p></td>
-                <td><p><a href="/Home/Buy/@b.Id">Buy</a></p></td>
-            </tr>
-        }
-    </table>
-</div>
-</body>
-</html>
+        <div>
+            <h3>Распродажа кабелей</h3>
+            <table>
+                <tr class="header">
+                    <td><p>Марка кабеля </p></td>
+                    <td><p>Поперечное сечение </p></td>
+                    <td><p>Производитель </p></td>
+                    <td><p>Цена </p></td>
+                </tr>
+                @foreach (var b in ViewBag.Cabels)
+                {
+                    <tr>
+                        <td><p>@b.Mark</p></td>
+                        <td><p>@b.CrossSection.ToString()</p></td>
+                        <td><p>@b.Producer</p></td>
+                        <td><p>@b.Price</p></td>
+                        <td><p><a href="/Home/Buy/@b.Id"> Купить</a></p></td>
+                    </tr>
+                }
+            </table>
+        </div>
